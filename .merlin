@@ -1,0 +1,12 @@
+####{BSB GENERATED: NO EDIT
+B lib/bs
+FLG -open ReactResTest
+FLG -ppx '/home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/linux/bsc.exe -as-ppx -bs-jsx 3'
+S /home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/lib/ocaml
+B /home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/lib/ocaml
+FLG -w +a-4-9-20-40-41-42-50-61-102
+S /home/arnab/cef/saas/rescript/react-res-test/node_modules/@rescript/react/lib/ocaml
+B /home/arnab/cef/saas/rescript/react-res-test/node_modules/@rescript/react/lib/ocaml
+S src
+B lib/bs/src
+####BSB GENERATED: NO EDIT}

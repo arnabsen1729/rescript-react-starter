@@ -1,0 +1,13 @@
+rescript = 1
+rule cp
+  command = cp $i $out
+rule touch
+ command = touch $out
+o index-ReactResTest.cmi : cp ../bs/src/index-ReactResTest.cmi
+o index-ReactResTest.cmj : cp ../bs/src/index-ReactResTest.cmj
+o index-ReactResTest.cmt : cp ../bs/src/index-ReactResTest.cmt
+o index.res : cp ../../src/index.res
+o ReactResTest.cmi : cp ../bs/ReactResTest.cmi
+o ReactResTest.cmj : cp ../bs/ReactResTest.cmj
+o ReactResTest.cmt : cp ../bs/ReactResTest.cmt
+build install.stamp : touch index-ReactResTest.cmi index-ReactResTest.cmj ReactResTest.cmi ReactResTest.cmj

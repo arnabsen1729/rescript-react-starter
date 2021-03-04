@@ -1,0 +1,18 @@
+rescript = 1
+g_finger := /home/arnab/cef/saas/rescript/react-res-test/node_modules/@rescript/react/lib/ocaml/install.stamp
+rule astj
+  command = /home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/linux/bsc.exe  -warn-error +101 -bs-v 9.0.1 -bs-jsx 3  -absname -bs-ast -o $out $i
+o src/index.ast : astj ../../src/index.res
+rule deps
+  command = /home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/linux/bsb_helper.exe -hash 335de725de22c69ec0ace68e4e4bb8ec -bs-ns ReactResTest $in
+  restat = 1
+o src/index.d : deps src/index.ast
+rule mij
+  command = /home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/linux/bsc.exe -bs-ns ReactResTest -I . -I src -I /home/arnab/cef/saas/rescript/react-res-test/node_modules/@rescript/react/lib/ocaml   -warn-error +101 -bs-package-name react-res-test -bs-package-output es6:$in_d:.bs.js -bs-v $g_finger $i
+  dyndep = 1
+  restat = 1
+o src/index-ReactResTest.cmj src/index-ReactResTest.cmi ../../src/index.bs.js : mij src/index.ast
+rule build_package
+  command = /home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/linux/bsc.exe -w -49 -color always -no-alias-deps  $i
+  restat = 1
+o ReactResTest.cmi : build_package ReactResTest.mlmap
