@@ -8,8 +8,10 @@ var root = document.querySelector("#root");
 if (root == null) {
   console.log("Error: could not find react element");
 } else {
-  ReactDom.render(React.createElement("div", undefined, "Hello World!"), root);
+  ReactDom.render(React.createElement("div", undefined, "Hello There!"), root);
 }
+
+((function hotReload (){if (import.meta.hot) { import.meta.hot.accept() }}()));
 
 export {
   
