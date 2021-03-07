@@ -4,7 +4,9 @@ import * as React from "react";
 import * as ReactDom from "react-dom";
 
 function Index$App(Props) {
-  return React.createElement("div", undefined, "Hello World");
+  return React.createElement("div", {
+              className: "text-4xl max-w-3xl mx-auto bg-gray-300 text-center py-4 mt-36"
+            }, "Hello World");
 }
 
 var App = {

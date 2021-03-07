@@ -1,7 +1,7 @@
 rescript = 1
 g_finger := /home/arnab/cef/saas/rescript/react-res-test/node_modules/@rescript/react/lib/ocaml/install.stamp
 rule astj
-  command = /home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/linux/bsc.exe  -warn-error +101 -bs-v 9.0.1 -bs-jsx 3  -absname -bs-ast -o $out $i
+  command = /home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/linux/bsc.exe  -warn-error +101 -bs-v 8.4.2 -bs-jsx 3  -absname -bs-ast -o $out $i
 o src/index.ast : astj ../../src/index.res
 rule deps
   command = /home/arnab/cef/saas/rescript/react-res-test/node_modules/bs-platform/linux/bsb_helper.exe -hash 335de725de22c69ec0ace68e4e4bb8ec -bs-ns ReactResTest $in

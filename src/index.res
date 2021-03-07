@@ -1,7 +1,9 @@
 module App = {
   @react.component
   let make = () => {
-    <div> {React.string("Hello World")} </div>
+    <div className="text-4xl max-w-3xl mx-auto bg-gray-300 text-center py-4 mt-36">
+      {React.string("Hello World")}
+    </div>
   }
 }
 

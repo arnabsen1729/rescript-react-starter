@@ -3,5 +3,5 @@
 
 /** @type {import("snowpack").SnowpackUserConfig } */
 module.exports = {
-    plugins: ['@snowpack/plugin-react-refresh'],
+    plugins: ['@snowpack/plugin-react-refresh', '@snowpack/plugin-postcss'],
 };
