@@ -3,10 +3,6 @@ rule cp
   command = cp $i $out
 rule touch
  command = touch $out
-o App-ReactResTest.cmi : cp ../bs/src/App-ReactResTest.cmi
-o App-ReactResTest.cmj : cp ../bs/src/App-ReactResTest.cmj
-o App-ReactResTest.cmt : cp ../bs/src/App-ReactResTest.cmt
-o App.res : cp ../../src/App.res
 o index-ReactResTest.cmi : cp ../bs/src/index-ReactResTest.cmi
 o index-ReactResTest.cmj : cp ../bs/src/index-ReactResTest.cmj
 o index-ReactResTest.cmt : cp ../bs/src/index-ReactResTest.cmt
@@ -14,4 +10,4 @@ o index.res : cp ../../src/index.res
 o ReactResTest.cmi : cp ../bs/ReactResTest.cmi
 o ReactResTest.cmj : cp ../bs/ReactResTest.cmj
 o ReactResTest.cmt : cp ../bs/ReactResTest.cmt
-build install.stamp : touch App-ReactResTest.cmi App-ReactResTest.cmj index-ReactResTest.cmi index-ReactResTest.cmj ReactResTest.cmi ReactResTest.cmj
+build install.stamp : touch index-ReactResTest.cmi index-ReactResTest.cmj ReactResTest.cmi ReactResTest.cmj

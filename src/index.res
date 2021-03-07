@@ -1,6 +1,16 @@
+module App = {
+  @react.component
+  let make = () => {
+    <div> {React.string("Hello World")} </div>
+  }
+}
+
 switch ReactDOM.querySelector("#root") {
-| Some(root) => ReactDOM.render(<div> {React.string("Hello There!")} </div>, root)
+| Some(root) => ReactDOM.render(<App />, root)
 | None => Js.log("Error: could not find react element")
 }
 
-%raw("function hotReload (){if (import.meta.hot) { import.meta.hot.accept() }}()")
+@scope("import") @val external meta: 'a = "meta"
+if meta["hot"] {
+  meta["hot"]["accept"]()
+}

@@ -3,17 +3,28 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 
+function Index$App(Props) {
+  return React.createElement("div", undefined, "Hello World");
+}
+
+var App = {
+  make: Index$App
+};
+
 var root = document.querySelector("#root");
 
 if (root == null) {
   console.log("Error: could not find react element");
 } else {
-  ReactDom.render(React.createElement("div", undefined, "Hello There!"), root);
+  ReactDom.render(React.createElement(Index$App, {}), root);
 }
 
-((function hotReload (){if (import.meta.hot) { import.meta.hot.accept() }}()));
+if (import.meta.hot) {
+  import.meta.hot.accept();
+}
 
 export {
+  App ,
   
 }
 /* root Not a pure module */
